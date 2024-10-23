@@ -1,5 +1,5 @@
 <h1 align="center">Polibite</h1><p align="center">
-<h3 align="center">A byte of Capitol Hill, just for you!</h3><p align="center">
+<h3 align="center">A bite of Capitol Hill, just for you!</h3><p align="center">
 <p align="center">
   <div style="display: flex; justify-content: center; align-items: center;">
     <img src="https://cdn.discordapp.com/attachments/777961961576071169/1298437204497928243/logo.png?ex=67198f61&is=67183de1&hm=9bb31f6d1320f8e06bd5f7292ac8fccbd2f1af4509b297eaff513ab91cffca89&" width="232" height="238" alt="Polibite Logo"/>
@@ -23,7 +23,7 @@ polibite@1.0.0
 
 ### Developers
 * [Atri Dey](https://github.com/atride) - AI integration, API interfacing, and repository maintenance
-* [Joshua Ko](https://github.com/Joshua-Ko7) - Web development, graphic design, and backend integration   
+* [Joshua Ko](https://github.com/Joshua-Ko7) - Web development and graphic design   
 
 ### Acknowledgements
 * Anthony Egan - Initial brainstorming assistance
