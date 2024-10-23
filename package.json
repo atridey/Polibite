@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "crawler-request": "^1.2.2",
+    "dotenv": "^16.4.5"
+  },
+  "name": "polibite",
+  "version": "1.0.0",
+  "description": "A bite of Capitol Hill, just for you!",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atridey/Polibite.git"
+  },
+  "keywords": [
+    "ai",
+    "generative-ai",
+    "politics",
+    "api",
+    "javascript",
+    "js",
+    "congressional-app-challenge",
+    "gemini"
+  ],
+  "author": "Atri Dey, Joshua Ko",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/atridey/Polibite/issues"
+  },
+  "homepage": "https://github.com/atridey/Polibite#readme"
+}
