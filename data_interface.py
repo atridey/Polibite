@@ -4,10 +4,15 @@ from io import BytesIO
 from pypdf import PdfReader
 import google.generativeai as genai
 from dotenv import load_dotenv
+
 load_dotenv()
 CKEY = os.getenv('CKEY')
 GKEY = os.getenv('GKEY')
-recent_records = requests.get(f'https://api.congress.gov/v3/daily-congressional-record?format=json&limit=25&api_key={CKEY}').json()['dailyCongressionalRecord']
+genai.configure(api_key=GKEY)
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+recent_records = requests.get(f'https://api.congress.gov/v3/daily-congressional-record?format=json&limit=10&api_key={CKEY}').json()['dailyCongressionalRecord']
+
 def get_dates():
     dates = []
     for record in recent_records:
@@ -15,7 +20,7 @@ def get_dates():
     return dates
 
 Q_PT1 = 'Within the triple curly braces is an entire day issue for a congressional session:\n{{{'
-Q_PT2 = '}}}\nConsidering a reader with political knowledge equal to or slightly less than the average American, summarize the issue in a concise, informative, impartial, and engaging way, structured with headings. Do not use Markdown, and use formatting tools such as Unicode bullets (do not add bullets to headings), and Unicode bold characters instead. Prioritize proceedings related to law with policy implications, such as bills and resolutions, and specifically list and name the most significant ones with bill numbers. Any non-legal things can be included if space remains. Limit the response to approximately 200 words. Begin your response with "Here\'s a Politibyte for you!\"'
+Q_PT2 = '}}}\nConsidering a reader with political knowledge equal to or slightly less than the average American, summarize the issue in a concise, informative, impartial, and engaging way. Structure the response in a way that is appropriate for one single paragraph of text without line breaks. Do not use Markdown, and use formatting tools such as Unicode bullets (do not add bullets to headings), and Unicode bold characters instead. Prioritize proceedings related to law with policy implications, such as bills and resolutions, and specifically list and name the most significant ones with bill numbers. Any non-legal things can be included if space remains. Limit the response to approximately 250-300 words. Begin your response with "Here\'s a Politibite for you!\"'
 def get_summary(date):
     for record in recent_records:
         if record['issueDate'][:10] == date:
@@ -35,9 +40,4 @@ def get_summary(date):
     for page in reader.pages:
         full_text += page.extract_text()
 
-    genai.configure(api_key=GKEY)
-    model = genai.GenerativeModel("gemini-1.5-flash")
     return model.generate_content(Q_PT1 + full_text + Q_PT2).text
-
-#dates = get_dates()
-#print(get_summary(dates[0]))

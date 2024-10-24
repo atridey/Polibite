@@ -7,13 +7,6 @@ from pydantic import BaseModel
 app = FastAPI()
 from fastapi.middleware.cors import CORSMiddleware
 
-origins = [
-    "http://localhost",
-    "http://127.0.0.1",
-    "http://localhost:3000",  # React/Frontend origin
-    "http://127.0.0.1:3000"
-]
-
 @app.get('/get_dates/')
 def return_dates():
     return {'date_list': get_dates()}
