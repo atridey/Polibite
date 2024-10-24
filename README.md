@@ -11,7 +11,7 @@ It's important to stay up-to-date on politics, but the government can get confus
 ### Server setup
 * (Recommended) Run `py -m venv .venv` to set up a virtual environment
   * Windows: Start the virtual environment with `.venv\Scripts\activate`
-  * Mac/Unix: ./venv/bin/activate
+  * Mac/Unix: `./venv/bin/activate`
 * Run `pip install -r requirements.txt` to install all dependencies from `requirements.txt`
 * Set up a `.env` file with `CKEY` and `GKEY` environment variables corresponding to your Congress and Gemini API keys, respectively.
 * Start the server! Run `fastapi run rest_server.py`

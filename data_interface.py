@@ -36,7 +36,7 @@ def get_summary(date):
         full_text += page.extract_text()
 
     genai.configure(api_key=GKEY)
-    model = genai.GenerativeModel("gemini-1.5-flash-8b")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     return model.generate_content(Q_PT1 + full_text + Q_PT2).text
 
 #dates = get_dates()
