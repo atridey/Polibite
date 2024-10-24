@@ -9,6 +9,7 @@
 It's important to stay up-to-date on politics, but the government can get confusing. Polibite is here to help! Using [officially-sourced](https://github.com/LibraryOfCongress/api.congress.gov/) Congressional Records from the last 10 days, Polibite uses Google's [Gemini](https://github.com/google-gemini) generative AI to cut through the jargon and help you understand the latest developments in politics.
 
 ### Server setup
+* `cd server_side`
 * (Recommended) Run `py -m venv .venv` to set up a virtual environment
   * Windows: Start the virtual environment with `.venv\Scripts\activate`
   * Mac/Unix: `./venv/bin/activate`
@@ -17,9 +18,8 @@ It's important to stay up-to-date on politics, but the government can get confus
 * Start the server! Run `fastapi run rest_server.py`
 
 ### Developers
-* [Atri Dey](https://github.com/atride) - AI integration, API interfacing, backend integration, and repository maintenance
-* [Joshua Ko](https://github.com/Joshua-Ko7) - Web development, graphic design   
+* [Atri Dey](https://github.com/atride) - AI integration, API interfacing, backend, and repository maintenance
+* [Joshua Ko](https://github.com/Joshua-Ko7) - Web development, graphic design  
+* Anthony Egan - Backend integration troubleshooting
 
-### Acknowledgements
-* Anthony Egan - Initial brainstorming assistance
-* Congressional App Challenge Volunteers - Making this competition possible!
+Thank you to Congressional App Challenge Volunteers for making this competition possible!
