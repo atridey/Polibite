@@ -20,6 +20,6 @@ It's important to stay up-to-date on politics, but the government can get confus
 ### Developers
 * [Atri Dey](https://github.com/atride) - AI integration, API interfacing, backend, and repository maintenance
 * [Joshua Ko](https://github.com/Joshua-Ko7) - Web development, graphic design  
-* Anthony Egan - Backend integration troubleshooting
+* Anthony Egan - Backend integration
 
 Thank you to Congressional App Challenge Volunteers for making this competition possible!
