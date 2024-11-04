@@ -2,7 +2,7 @@
 <h3 align="center">A bite of Capitol Hill, just for you!</h3><p align="center">
 <p align="center">
   <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="[https://cdn.discordapp.com/attachments/777961961576071169/1298437204497928243/logo.png?ex=67198f61&is=67183de1&hm=9bb31f6d1320f8e06bd5f7292ac8fccbd2f1af4509b297eaff513ab91cffca89&](https://repository-images.githubusercontent.com/876954395/e868085c-e19b-428d-9004-35c7014efd01)" width="232" height="238" alt="Polibite Logo"/>
+    <img src="https://repository-images.githubusercontent.com/876954395/e868085c-e19b-428d-9004-35c7014efd01" width="232" height="238" alt="Polibite Logo"/>
   </div>
 </p>
 
