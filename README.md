@@ -1,10 +1,10 @@
 <h1 align="center">Polibite</h1><p align="center">
 <h3 align="center">A bite of Capitol Hill, just for you!</h3><p align="center">
-<p align="center">
+<center>
   <div style="display: flex; justify-content: center; align-items: center;">
     <img src="https://repository-images.githubusercontent.com/876954395/e868085c-e19b-428d-9004-35c7014efd01" width="232" height="238" alt="Polibite Logo"/>
   </div>
-</p>
+</center>
 
 It's important to stay up-to-date on politics, but the government can get confusing. Polibite is here to help! Using [officially-sourced](https://github.com/LibraryOfCongress/api.congress.gov/) Congressional Records from the last 10 days, Polibite uses Google's [Gemini](https://github.com/google-gemini) generative AI to cut through the jargon and help you understand the latest developments in politics.
 
