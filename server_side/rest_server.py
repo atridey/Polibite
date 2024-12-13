@@ -1,11 +1,12 @@
 from data_interface import *
 
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 from pydantic import BaseModel
-
-app = FastAPI(root_path = '/api', redoc_url = None)
 from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(redoc_url = None)
+router = APIRouter(prefix = '/api')
 
 origins = [
     "http://localhost",
@@ -14,11 +15,13 @@ origins = [
     "http://127.0.0.1:3000"
 ]
 
-@app.get('/get_dates/')
+@router.get('/get_dates/')
 def return_dates():
     return {'date_list': get_dates()}
 
 
-@app.get('/get_summary/{ISOSTRING}')
+@router.get('/get_summary/{ISOSTRING}')
 def return_summary(ISOSTRING: str):
     return {'summary': get_summary(ISOSTRING).split('\n')}
+
+app.include_router(router)
