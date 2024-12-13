@@ -7,7 +7,6 @@ from pypdf import PdfReader
 import google.generativeai as genai
 from dotenv import load_dotenv
 
-load_dotenv()
 CKEY = os.getenv('CKEY')
 GKEY = os.getenv('GKEY')
 genai.configure(api_key=GKEY)
