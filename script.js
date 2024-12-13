@@ -8,7 +8,7 @@ submitButton.disabled = true;
 // Generates the buttons for the past 10 days by fetching dates from the backend
 async function generatePastTenButtons(){
     try {
-        const response = await fetch('localhost/get_dates/');
+        const response = await fetch('localhost:8000/api/get_dates/');
         const data = await response.json();
         const dateList = data.date_list;
 
@@ -40,7 +40,7 @@ async function fetchSummary(date){
     resultTitle.innerHTML = 'Loading...';
 
     try {
-        const response = await fetch(`localhost:8000/get_summary/2024-09-06`);
+        const response = await fetch(`localhost:8000/api/get_summary/2024-09-06`);
         const data = await response.json();
         const summary = data.summary;
 
