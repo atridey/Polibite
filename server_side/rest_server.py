@@ -4,7 +4,7 @@ from typing import Union
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-app = FastAPI()
+app = FastAPI(root_path = '/api', redoc_url = None)
 from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
@@ -22,7 +22,3 @@ def return_dates():
 @app.get('/get_summary/{ISOSTRING}')
 def return_summary(ISOSTRING: str):
     return {'summary': get_summary(ISOSTRING).split('\n')}
-
-@app.get('/')
-def greet():
-    return {'wsp': 'how u doin', 'politics?': 'bite sized', 'need data?': 'check docs'}
