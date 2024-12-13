@@ -12,15 +12,15 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",          // Routes starting with `/api/` go to the backend
+      "src": "/api/(.*)",
       "dest": "backend/rest_server.py"
     },
     {
-      "src": "/website/images/(.*)",       // Routes starting with `/images/` serve static images
+      "src": "/website/images/(.*)",       
       "dest": "website/images/$1"
     },
     {
-      "src": "/(.*)",              // All other routes go to the static frontend
+      "src": "/(.*)",
       "dest": "website/$1"
     }
   ]
