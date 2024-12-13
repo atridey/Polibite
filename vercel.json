@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "website/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "backend/rest_server.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",          // Routes starting with `/api/` go to the backend
+      "dest": "backend/rest_server.py"
+    },
+    {
+      "src": "/website/images/(.*)",       // Routes starting with `/images/` serve static images
+      "dest": "website/images/$1"
+    },
+    {
+      "src": "/(.*)",              // All other routes go to the static frontend
+      "dest": "website/$1"
+    }
+  ]
+}
+
