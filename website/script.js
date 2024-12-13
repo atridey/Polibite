@@ -40,7 +40,7 @@ async function fetchSummary(date){
     resultTitle.innerHTML = 'Loading...';
 
     try {
-        const response = await fetch(`https://polibite.vercel.app/api/get_summary/date`);
+        const response = await fetch(`https://polibite.vercel.app/api/get_summary/${date}`);
         const data = await response.json();
         const summary = data.summary;
 
