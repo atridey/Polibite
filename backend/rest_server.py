@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 CKEY = os.getenv('CKEY')
 GKEY = os.getenv('GKEY')
 genai.configure(api_key=GKEY)
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-1.5-flash-8b")
 
 recent_records = requests.get(f'https://api.congress.gov/v3/daily-congressional-record?format=json&limit=10&api_key={CKEY}').json()['dailyCongressionalRecord']
 
