@@ -5,7 +5,6 @@ import requests
 from io import BytesIO
 from pypdf import PdfReader
 import google.generativeai as genai
-from dotenv import load_dotenv
 
 CKEY = os.getenv('CKEY')
 GKEY = os.getenv('GKEY')
@@ -32,7 +31,7 @@ def purge_cache(dates):
             del summary_cache[cached_date]
 
 Q_PT1 = 'Within the triple curly braces is an entire day issue for a congressional session:\n{{{'
-Q_PT2 = '}}}\nConsidering a reader with political knowledge equal to or slightly less than the average American, summarize the issue in a concise, informative, impartial, and engaging way. Structure the response in a way that is appropriate for one single paragraph of text without line breaks. Do not use Markdown, and use formatting tools such as Unicode bullets (do not add bullets to headings), and Unicode bold characters instead. Prioritize proceedings related to law with policy implications, such as bills and resolutions, and specifically list and name the most significant ones with bill numbers. Any non-legal things can be included if space remains. Limit the response to approximately 250-300 words. Begin your response with "Here\'s a Polibite for you!\"'
+Q_PT2 = '}}}\nConsidering a reader with political knowledge equal to or slightly less than the average American, summarize the issue in a concise, informative, impartial, and engaging way. Structure the response in a way that is appropriate for one single paragraph of text. Do not use Markdown, and use formatting tools such as bullets (do not add bullets to headings) instead. Use paragraph breaks when necessary, and ensure that any and all line breaks are represented with HTML <br> tags and not actual line breaks in the outputted string. Prioritize proceedings related to law with policy implications, such as bills and resolutions, and specifically list and name the most significant ones with bill numbers. Any non-legal things can be included if space remains. Limit the response to approximately 250-300 words. Begin your response with "Here\'s a Polibite for you!\"'
 def get_summary(date):
     if date in list(summary_cache.keys()):
         return summary_cache[date]
@@ -80,6 +79,6 @@ def return_summary(ISOSTRING: str):
     else:
         summary = get_summary(ISOSTRING)
         summary_cache[ISOSTRING] = summary  # Cache it for future use
-    return {'summary': summary.split('\n')}
+    return {'summary': summary}
 
 app.include_router(router)
