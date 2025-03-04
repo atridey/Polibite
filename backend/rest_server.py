@@ -70,8 +70,7 @@ router = APIRouter(prefix='/api')
 
 @router.get('/get_dates/')
 def return_dates(background_tasks: BackgroundTasks):
-    dates = get_dates()  #Fetch and return dates immediately
-    background_tasks.add_task(update_cache, dates)  #Run cache update in the background
+    dates = get_dates()
     return {'date_list': dates}
 
 @router.get('/get_summary/{ISOSTRING}')
