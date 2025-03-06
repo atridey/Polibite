@@ -1,9 +1,9 @@
 #################### OUTSIDE API HANDLING #########################
-
 import os
 import requests
 from io import BytesIO
 from pypdf import PdfReader
+import json
 CKEY = os.getenv('CKEY')
 
 import google.generativeai as genai
