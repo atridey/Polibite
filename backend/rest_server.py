@@ -15,8 +15,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 FIREBASE_CREDENTIALS = os.getenv('FIREBASE_CREDENTIALS')
-if not FIREBASE_CREDENTIALS:
-    raise ValueError('vercel stoopid')
+print(FIREBASE_CREDENTIALS) #i'm this desperate
 cred = credentials.Certificate(json.loads(FIREBASE_CREDENTIALS))
 firebase_admin.initialize_app(cred)
 db = firestore.client()
