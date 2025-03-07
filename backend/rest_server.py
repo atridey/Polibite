@@ -14,9 +14,9 @@ model = genai.GenerativeModel("gemini-1.5-flash-8b")
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-FIREBASE_CREDENTIALS = os.getenv('FIREBASE_CREDENTIALS')
-print(FIREBASE_CREDENTIALS) #i'm this desperate
-cred = credentials.Certificate(json.loads(FIREBASE_CREDENTIALS))
+FIREBASE_CREDENTIALS = json.loads(os.getenv('FIREBASE_CREDENTIALS'))
+FIREBASE_CREDENTIALS['private_key'] = os.getenv('FIREBASE_KEYONLY').replace(r'\n', '\n')
+cred = credentials.Certificate(FIREBASE_CREDENTIALS)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
