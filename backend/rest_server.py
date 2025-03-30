@@ -73,9 +73,17 @@ def get_summary(date):
 
 from typing import Union
 from fastapi import FastAPI, APIRouter, BackgroundTasks
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 app = FastAPI(redoc_url=None)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 router = APIRouter(prefix='/api')
 
 @router.get('/get_dates/')
