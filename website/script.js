@@ -8,7 +8,7 @@ submitButton.disabled = true;
 // Generates the buttons for the past 10 days by fetching dates from the backend
 async function generatePastTenButtons(){
     try {
-        const response = await fetch('https://polibite.vercel.app/api/get_dates/');
+        const response = await fetch('https://polibite.onrender.com/api/get_dates/');
         const data = await response.json();
         const dateList = data.date_list;
 
